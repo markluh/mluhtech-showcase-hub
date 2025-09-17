@@ -34,10 +34,17 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
+
       
       const serviceId = 'service_eu2gele';
       const templateId = 'template_v1yi93k';
       const publicKey = 'xnounxlwzkF9q5pjU';
+
+      // Replace these with your EmailJS credentials
+      // const serviceId = 'YOUR_SERVICE_ID';
+      // const templateId = 'YOUR_TEMPLATE_ID';
+      // const publicKey = 'YOUR_PUBLIC_KEY';
+
 
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
