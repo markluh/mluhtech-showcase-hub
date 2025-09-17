@@ -27,7 +27,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Linkedin, href: "#", name: "LinkedIn" },
     { icon: Twitter, href: "#", name: "Twitter" },
-    { icon: Github, href: "#", name: "GitHub" }
+    { icon: Github, href: "https://github.com/markluh", name: "GitHub" }
   ];
 
   return (
@@ -48,7 +48,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-accent-light" />
-                  <span className="text-sm text-primary-foreground/80">+1 (555) 123-4567</span>
+                  <span className="text-sm text-primary-foreground/80">+254 798025897</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-4 w-4 text-accent-light" />
@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-4 w-4 text-accent-light" />
-                  <span className="text-sm text-primary-foreground/80">123 Tech Boulevard, NY 10001</span>
+                  <span className="text-sm text-primary-foreground/80">Nairobi, Kenya</span>
                 </div>
               </div>
             </div>
@@ -131,7 +131,9 @@ const Footer = () => {
                   ))}
                 </div>
               </div>
-
+                  <div className='text-center md:text-center'>
+                    <img className="min-w-70" alt="m-luhtech llc logo" src="./android-chrome-192x192.png"/>
+                  </div>
               <div className="text-center md:text-right">
                 <p className="text-primary-foreground/80 text-sm mb-2">
                   Ready to start your project?
@@ -148,7 +150,7 @@ const Footer = () => {
         <div className="py-6 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} M-LUHTECH LLC. All rights reserved.
+              &copy; {currentYear} M-LUHTECH LLC. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-primary-foreground/60 hover:text-accent-light text-sm transition-colors">

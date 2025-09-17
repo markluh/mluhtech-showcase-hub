@@ -20,6 +20,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
+            
             <h1 className="text-xl font-bold text-primary">M-LUHTECH LLC</h1>
           </div>
 

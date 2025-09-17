@@ -5,21 +5,21 @@ import teamImage from "@/assets/team-image.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Michael Johnson",
+      name: "Mark Hillary",
       role: "Chief Technology Officer",
-      bio: "15+ years in enterprise software architecture and cloud solutions.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      bio: "an expert in software architecture and cloud solutions.",
+      image: "./196049577.jpg",
       social: {
         linkedin: "#",
-        email: "michael@mluhtech.com",
-        github: "#"
+        email: "mark@mluhtech.com",
+        github: "https://github.com/markluh"
       }
     },
     {
       name: "Sarah Chen",
       role: "Lead Software Engineer",
       bio: "Full-stack developer specializing in React, Node.js, and DevOps practices.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      image: "",
       social: {
         linkedin: "#",
         email: "sarah@mluhtech.com",
@@ -30,7 +30,7 @@ const Team = () => {
       name: "David Rodriguez",
       role: "Senior Consultant",
       bio: "Digital transformation expert with extensive experience in fintech and healthcare.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      image: "",
       social: {
         linkedin: "#",
         email: "david@mluhtech.com",
@@ -41,7 +41,7 @@ const Team = () => {
       name: "Emily Williams",
       role: "UI/UX Designer",
       bio: "Creating intuitive and engaging user experiences for web and mobile applications.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+      image: "",
       social: {
         linkedin: "#",
         email: "emily@mluhtech.com"

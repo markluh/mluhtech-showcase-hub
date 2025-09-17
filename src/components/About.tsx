@@ -91,7 +91,7 @@ const About = () => {
         <div className="mt-20 pt-16 border-t border-border">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">2018</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">2025</div>
               <div className="text-muted-foreground">Founded</div>
             </div>
             <div>

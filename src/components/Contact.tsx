@@ -101,7 +101,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Office",
-      details: ["123 Tech Boulevard", "Innovation District, NY 10001"],
+      details: ["Nairobi", "Kenya"],
       description: "Visit us for in-person consultations"
     },
     {
