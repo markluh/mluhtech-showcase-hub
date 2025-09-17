@@ -4,8 +4,80 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      // Replace these with your EmailJS credentials
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'M-LUHTECH LLC',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -90,7 +162,7 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-6">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="firstName" className="text-foreground font-medium">
@@ -98,6 +170,9 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                         placeholder="Enter your first name"
                         className="border-border focus:ring-primary focus:border-primary"
                         required
@@ -109,6 +184,9 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleInputChange}
                         placeholder="Enter your last name"
                         className="border-border focus:ring-primary focus:border-primary"
                         required
@@ -123,7 +201,10 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         placeholder="Enter your email"
                         className="border-border focus:ring-primary focus:border-primary"
                         required
@@ -135,7 +216,10 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         placeholder="Enter your phone number"
                         className="border-border focus:ring-primary focus:border-primary"
                       />
@@ -148,6 +232,9 @@ const Contact = () => {
                     </Label>
                     <Input
                       id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
                       placeholder="Enter your company name"
                       className="border-border focus:ring-primary focus:border-primary"
                     />
@@ -159,6 +246,9 @@ const Contact = () => {
                     </Label>
                     <Input
                       id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
                       placeholder="What's this about?"
                       className="border-border focus:ring-primary focus:border-primary"
                       required
@@ -171,6 +261,9 @@ const Contact = () => {
                     </Label>
                     <Textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Tell us about your project or requirements..."
                       rows={6}
                       className="border-border focus:ring-primary focus:border-primary resize-none"
@@ -180,11 +273,12 @@ const Contact = () => {
 
                   <Button 
                     type="submit"
-                    className="w-full gradient-primary text-primary-foreground hover:opacity-90 transition-opacity shadow-hero py-3"
+                    disabled={isLoading}
+                    className="w-full gradient-primary text-primary-foreground hover:opacity-90 transition-opacity shadow-hero py-3 disabled:opacity-50"
                     size="lg"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    Send Message
+                    {isLoading ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
