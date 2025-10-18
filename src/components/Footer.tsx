@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <h3 className="text-2xl font-bold mb-6">M-LUHTECH LLC</h3>
+              <h3 className="text-2xl font-bold mb-6">Elevate Softwares co</h3>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
                 Delivering innovative technology solutions that drive business growth 
                 and digital transformation. Partner with us for your next project.
@@ -132,7 +132,7 @@ const Footer = () => {
                 </div>
               </div>
                   <div className='text-center md:text-center'>
-                    <img className="min-w-70" alt="m-luhtech llc logo" src="./android-chrome-192x192.png"/>
+                    <img className="min-w-70" alt="Elevate Softwares co logo" src="./android-chrome-192x192.png"/>
                   </div>
               <div className="text-center md:text-right">
                 <p className="text-primary-foreground/80 text-sm mb-2">
@@ -150,7 +150,7 @@ const Footer = () => {
         <div className="py-6 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-primary-foreground/60 text-sm">
-              &copy; {currentYear} M-LUHTECH LLC. All rights reserved.
+              &copy; {currentYear} Elevate Softwares co. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-primary-foreground/60 hover:text-accent-light text-sm transition-colors">

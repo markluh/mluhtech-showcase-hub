@@ -95,7 +95,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["hello@mluhtech.com", "support@mluhtech.com"],
+      details: ["hello@elevate.xyz", "support@elevate.xyz"],
       description: "We'll respond within 24 hours"
     },
     {

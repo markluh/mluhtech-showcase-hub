@@ -36,11 +36,11 @@ const About = () => {
           {/* Left Content */}
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              About <span className="text-primary">M-LUHTECH LLC</span>
+              About <span className="text-primary">Elevate Softwares co</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               Founded with a vision to bridge the gap between business needs and technological possibilities, 
-              M-LUHTECH LLC has emerged as a trusted partner for organizations seeking digital excellence.
+              Elevate Softwares co has emerged as a trusted partner for organizations seeking digital excellence.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Our team of experienced engineers, consultants, and project managers work collaboratively 
